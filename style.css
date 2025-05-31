@@ -56,9 +56,78 @@ header{
     margin-left: 45px;
     transition: .3s;
 }
+.navbar ul li:nth-child(1){
+    list-style-type: none;
+}
+.navbar .hide-menu{
+    position: relative;
+}
+.hide-menu a::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 100%;
+    height: 100%;
+    background: rgb(0,51,60);
+    animation: showRight 1s ease forwards;
+    animation-delay: .3s;
+}
+.navbar .hide-menu a{
+    display: block;
+    margin: 0;
+    padding: 0;
+}
+.navbar .hide-menu a:hover{
+    background-color: #ff0000;
+}
+.navbar .hide-menu a i{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 40px;
+    height: 40px;
+    color: #ededed;
+    font-size: 21px;
+}
+.navbar .hide-menu{
+    float: left;
+}
+.navbar .hide-menu span.Show{
+    position: absolute;
+    display: none;
+    margin-left: -330px;
+    border-radius: 10px;
+    height: 60px;
+}
+.navbar .hide-menu span.Show .Hum1{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #00abf0;
+    width: 60px;
+    height: 20px;
+    border-radius: 10px;
+    font-size: 10px;
+    margin: 8px;
+    margin-top: 20px;
+}
+.navbar .hide-menu span.Show .Hum1{
+    font-size: 10px;
+    font-weight: 700;
+}
+.navbar .hide-menu span.Show a:hover{
+    background-color: #f0e400;
+}
+.hide-menu:hover span.Show{
+    display: flex;
+}
 .navbar a:hover,
 .navbar a.active{
     color: #ff0000;
+}
+.navbar  .menu{
+    position: relative;
 }
 .home{
     display: flex;
@@ -286,7 +355,9 @@ header{
     width: 90%;
     height: 75%;
     display: flex;
-    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-right: 35px;
     margin-top:110px;
     box-shadow: 1px 1px 9px rgb(77, 77, 77);
     border-radius: 8px;
@@ -361,6 +432,7 @@ header{
     margin-top: 45px;
     line-height: 1.5;
     border-radius: 8px;
+    margin-right: 35px;
 }
 .home-skills .skills-txt{
     display: flex;
@@ -441,6 +513,7 @@ header{
     height: 85%;
     line-height: 1.5;
     border-radius: 8px;
+    margin-right: 35px;
 }
 .home-portfolio .portfolio-txt{
     display: flex;
@@ -478,18 +551,47 @@ header{
     align-items: center;
     margin: 10px;
     width: 100%;
-    height: 320px;
+    height: 420px;
     border: 1px solid #00abf0 ;
     border-radius: 5px;
+    overflow: hidden;
 }
 .home-portfolio .portfolio-box h1{
     display: flex;
     justify-content: center;
     align-items: center;
     width: 100%;
-    height: 100%;
+    height: 30%;
     color: dimgray;
     font-size: 18px;
+}
+.home-portfolio .portfolio-box img{
+    width: 100%;
+    height: 85%;
+    object-fit: cover;
+}
+.home-portfolio .portfolio-box span{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 15%;
+    text-decoration: none;
+}
+.home-portfolio .portfolio-box a{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    font-weight: 500;
+    width: 50%;
+    height: 50%;
+    border-radius: 10px;
+    text-decoration: none;
+    background-color: #ededed;
+}
+.home-portfolio .portfolio-box a:hover{
+    text-decoration: underline;
 }
 .portfolio-box:hover{
     transform: translate(0px,-9px);
@@ -523,6 +625,7 @@ header{
     backdrop-filter: blur(10px);
     box-shadow: 1px 2px 5px rgba(105, 105, 105, 0.258);
     position: relative;
+    margin-right: 60px;
 }
 .home-contact h1{
     margin: 12px;
@@ -630,6 +733,9 @@ header{
     padding: 10px;
     font-size: 13px;
     font-weight: 400;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 /* KEYFRAME ANNIMATE */
@@ -1265,6 +1371,16 @@ header{
         margin-left: 45px;
         transition: .3s;
     }
+    .navbar .btn-menu{
+        display: flex;
+        position: relative;
+        font-size: 24px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        margin-left: 45px;
+        transition: .3s;
+    }
     .navbar a:hover,
     .navbar a.active{
         color: #ff0000;
@@ -1843,6 +1959,11 @@ header{
         margin-left: 45px;
         transition: .3s;
     }
+    .navbar .hide-menu a{
+        display: none;
+        margin: 0;
+        padding: 0;
+    }
     .navbar a:hover,
     .navbar a.active{
         color: #ff0000;
@@ -2404,6 +2525,16 @@ header{
         display: flex;
         position: relative;
         font-size: 19px;
+        color: white;
+        text-decoration: none;
+        font-weight: 600;
+        margin-left: 45px;
+        transition: .3s;
+    }
+    .navbar .btn-menu{
+        display: none;
+        position: relative;
+        font-size: 18px;
         color: white;
         text-decoration: none;
         font-weight: 600;
